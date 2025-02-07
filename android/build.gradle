@@ -1,34 +1,31 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android' version '1.7.10'
+}
+
 group 'com.github.sathish76.flutter_dnd'
 version '1.0'
 
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
-    }
+repositories {
+    google()
+    mavenCentral()
 }
-
-rootProject.allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    namespace 'com.github.sathish76.flutter_dnd'
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 16
+        targetSdkVersion 33
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     lintOptions {
         disable 'InvalidPackage'
     }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
 }
